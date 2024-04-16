@@ -1,0 +1,20 @@
+{
+  "name": "4_inventory-management-revision",
+  "version": "1.0.0",
+  "description": "Inventory Management App",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "Abdus Samad",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "nodemon": "^3.1.0"
+  }
+}
