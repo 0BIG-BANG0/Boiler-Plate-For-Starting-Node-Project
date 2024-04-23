@@ -9,7 +9,7 @@ const app = express()
 app.use(express.static("views"));
 
 //Setting up the view Engine (ejs in this case)
-app.use("view engine", ejs)
+app.set("view engine", 'ejs')
 app.set("views", path.join(path.resolve(), "src","views"))
 
 //Using Express-ejs-Layout for Layout support
