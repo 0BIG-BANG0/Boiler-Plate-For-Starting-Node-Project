@@ -1,21 +1,29 @@
-import express from "express"
-import path from "path"
-import expressLayout from "express-ejs-layouts"
+import express from "express";
+import productRouter from "./src/routes/products.routes.js";
+import path from "path";
+import expressLayout from "express-ejs-layouts";
 
 //Create an instance of express app
-const app = express()
+const app = express();
 
-//for static file like css 
+
+//for static file like css
 app.use(express.static("views"));
 
-//Setting up the view Engine (ejs in this case)
-app.use("view engine", ejs)
-app.set("views", path.join(path.resolve(), "src","views"))
+//BodyParser
+app.use(express.urlencoded({extended:true}))
+
+//Setting up the view Engine (ejs in this case) use set
+app.set("view engine", "ejs");
+app.set("views", path.join(path.resolve(), "src", "views"));
 
 //Using Express-ejs-Layout for Layout support
-app.use(expressLayout)
+app.use(expressLayout);
 
 //Serving static Files from 'src/views' directory
-app.use(express.static("src/views"))
+app.use(express.static("src/views"));
 
-export default app
+// Using the productRouter for handling routes starting from "/"
+app.use("/", productRouter);
+
+export default app;
