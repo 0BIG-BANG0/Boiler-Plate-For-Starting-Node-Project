@@ -159,4 +159,14 @@ In summary, export default is a useful tool for exporting a single value or enti
 
 
 
+# any req that we get through anchor tag is get req why
 
+When you use an anchor tag (<a> tag) in HTML to create a hyperlink, it typically triggers a GET request because it's the default behavior defined by the HTML specification and the HTTP protocol.
+
+Here's why:
+
+Historical convention: HTML has evolved over time, and GET requests have been the traditional method for retrieving resources linked via anchor tags since the early days of the web. This convention has been maintained for consistency and compatibility reasons.
+Semantics of GET: The GET method in HTTP is specifically designed for retrieving data from a server. When you click on a link, you're essentially requesting the content of the linked resource, which aligns perfectly with the semantics of the GET method.
+Safety and idempotence: GET requests are considered safe and idempotent, meaning they should not have any side effects on the server and should produce the same result every time they are executed. This makes them suitable for use in scenarios where users are simply navigating to a different page or fetching resources.
+Limited functionality of HTML: HTML is primarily a markup language for structuring content, not for defining complex interactions or behaviors. By defaulting to GET requests for anchor tags, HTML keeps things simple and predictable.
+While it's possible to use other HTTP methods like POST with anchor tags via JavaScript or other means, doing so would go against the standard behavior and could lead to unexpected results or non-standard behavior in browsers.

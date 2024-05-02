@@ -26,3 +26,11 @@
 8. **Create Rules for Validation and Run**: Define validation rules for your application using Express Validator. Then, apply these rules as middleware to your routes to validate incoming requests. Check for any validation errors and handle them appropriately.
 
 9. Update Product
+
+10. Delete Product 
+   Step 1 - add a button
+   Step 2 - Grab that button(using params .id so you know which element to delete) give it ref like the route where we want this req to go and any req that we send through  anchor tag is get req 
+Step3 - we have use redirect their so that on reload it should not delete 
+Step4 - We want to confirm before delete so we have to add js file and for that we have to add btn to delete and and add script and just give the file name as we have already exposed the public folder staticaly using express
+
+11. Added some Buttons

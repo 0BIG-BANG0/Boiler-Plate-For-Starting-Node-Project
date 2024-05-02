@@ -32,10 +32,20 @@ export default class ProductController {
       res.status(401).send("Page not Found");
     }
   }
-  postUpdateProduct(req,res){
+  postUpdateProduct(req, res) {
     ProductModel.update(req.body);
     var products = ProductModel.get();
-    res.render('products',{products:products})
+    res.render("products", { products: products });
+  }
 
+  deleteProduct(req, res) {
+    const id = req.params.id;
+    const productFound = ProductModel.getById(id);
+    if (!productFound) {
+      return res.status(401).send("Product not found");
+    }
+    ProductModel.delete(id);
+    const products = ProductModel.get();
+    res.redirect("/", );
   }
 }
