@@ -11,9 +11,11 @@ export default class ProductController {
     return res.render("new-product", { errorMessage: null });
   }
   addNewProduct(req, res) {
+    const {name,desc,price} = req.body
+    const imageUrl = 'images/' + req.file.filename;
     console.log(req.body);
     // let errors = [];
-    let newProducts = ProductModel.add(req.body);
+    let newProducts = ProductModel.add(name,desc,price,imageUrl);
     let pro = ProductModel.get();
     return res.redirect("/"); //redirect helps prevent unintended behavior, such as resubmitting form data or performing the same action multiple times, when users refresh the page after a POST request. It's particularly useful for actions like adding new records to a database, updating existing records, or submitting forms.
   }
@@ -33,7 +35,11 @@ export default class ProductController {
     }
   }
   postUpdateProduct(req, res) {
-    ProductModel.update(req.body);
+    // ProductModel.update(req.body);
+    const {id,name, desc, price} = req.body;
+    const imageUrl = 'images/' + req.file.filename
+    
+    ProductModel.update(id,name,desc,price,imageUrl)
     var products = ProductModel.get();
     res.redirect("/"); // use redirect to prevent unintended behaviour 
   }

@@ -10,22 +10,25 @@ export default class ProductModel {
   static get() {
     return products;
   }
-  static add(productObj) {
+  static add(name,desc,price,imageUrl) {
     let newProduct = new ProductModel(
       products.length + 1,
-      productObj.name,
-      productObj.desc,
-      productObj.price,
-      productObj.imageUrl
+      name,
+      desc,
+      price,
+      imageUrl
     );
     products.push(newProduct);
   }
   static getById(id) {
     return products.find((p) => p.id == id);
   }
-  static update(productObj) {
-    const index = products.findIndex((p) => p.id == productObj.id);
-    products[index] = productObj;
+  static update(id,name,desc,price,imageUrl) {
+    const index = products.findIndex((p) => p.id == id);
+    products[index].name = name;
+    products[index].desc = desc;
+    products[index].price = price;
+    products[index].imageUrl =imageUrl;
   }
   static delete(id){
     const index = products.findIndex(p=> p.id ==id)

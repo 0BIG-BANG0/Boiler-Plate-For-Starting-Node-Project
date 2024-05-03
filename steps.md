@@ -34,3 +34,16 @@ Step3 - we have use redirect their so that on reload it should not delete
 Step4 - We want to confirm before delete so we have to add js file and for that we have to add btn to delete and and add script and just give the file name as we have already exposed the public folder staticaly using express
 
 11. Added some Buttons
+
+12. File Upload using Multer
+    AddNew Product
+    step 1 - Install Multer - npm i multer check documentaion - ✅
+    2 - Changes in view - ✅
+    3 - Middleware to handle files - ✅
+    4. Apply that middleware - ✅ 
+    5. Update COntroller to update urls of images - 1. Add a debugger in the destination to check data in req.body and req.file and a debugger in the controller in addNewProduct's model add here you can see that the debugger will show you req.body and body in body there is no image and image is in file so we have to destructure all in the add function in model
+    6. Addded a custon Validator and to ahndle validation for file.
+
+    UpdateProduct
+
+    
