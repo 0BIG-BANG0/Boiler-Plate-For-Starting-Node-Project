@@ -35,7 +35,7 @@ export default class ProductController {
   postUpdateProduct(req, res) {
     ProductModel.update(req.body);
     var products = ProductModel.get();
-    res.render("products", { products: products });
+    res.redirect("/"); // use redirect to prevent unintended behaviour 
   }
 
   deleteProduct(req, res) {
@@ -47,5 +47,10 @@ export default class ProductController {
     ProductModel.delete(id);
     const products = ProductModel.get();
     res.redirect("/", );
+  }
+  searchProduct(req,res){
+    const {name} = req.body;
+    const product = ProductModel.searchByName(name);
+    res.render('searchResults', {products: product})
   }
 }

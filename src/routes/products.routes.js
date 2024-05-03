@@ -20,4 +20,6 @@ productRouter.post("/update-product", productController.postUpdateProduct);
 
 productRouter.post('/delete-product/:id', productController.deleteProduct)
 
+//Search
+productRouter.post("/search", productController.searchProduct)
 export default productRouter;

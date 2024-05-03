@@ -84,7 +84,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  width: 100px;
+  width: 90px;
   height: 40px;
   border: none;
   padding: 0px 20px;
@@ -126,6 +126,7 @@
 .button-container {
     display: flex; /* Use flexbox to make elements inside displayed in a row */
     align-items: center; /* Center elements vertically */
+    
   }
   
   /* Adjust margin between elements if needed */

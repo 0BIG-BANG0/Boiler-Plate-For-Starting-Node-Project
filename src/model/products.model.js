@@ -31,6 +31,14 @@ export default class ProductModel {
     const index = products.findIndex(p=> p.id ==id)
      products.splice(index,1)
   }
+  static searchByName(name){
+    const searchPro = products.filter(p=> {
+      if(p.name == name){
+        return p;
+      }
+    })
+    return searchPro;
+  }
 }
 
 var products = [
