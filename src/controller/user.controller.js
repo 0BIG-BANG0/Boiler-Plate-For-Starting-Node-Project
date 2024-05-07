@@ -31,15 +31,17 @@ export default class UserController {
   logout(req, res){
     //1.
     //on logout destroy the session
-    // req.session.destroy((err)=>{
-    //     if(err){
-    //         console.log(err)
-    //     }else{
-    //         res.redirect('/login')
-    //     }
-    // })
+    req.session.destroy((err)=>{
+        if(err){
+            console.log(err)
+        }else{
+            res.clearCookie('lastVisit')
+            res.redirect('/login')
+        }
+    })
     // 2.
-    req.session = null;
-    res.redirect('/login')
+    // req.session = null;
+    // res.redirect('/login')
+    // res.clearCookie('lastVisit')
   }
 }

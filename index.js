@@ -5,12 +5,17 @@ import path from "path";
 import expressLayout from "express-ejs-layouts";
 import userRouter from "./src/routes/user.routes.js";
 import session from 'express-session'
-import {auth} from "./src/middlewares/auth.middleware.js";
+import cookieParser from "cookie-parser";
+// import { lastVisit } from "./src/middlewares/lastVisit.middleware.js";
 //Create an instance of express app
 const app = express();
 
 //for static file like css and js
 app.use(express.static("public"));
+// use cookie Parser and set last visit
+
+app.use(cookieParser())
+// app.use(lastVisit) if we apply here it its functionality will be in all the pages
 
 // COnfiguring Session
 app.use(session({

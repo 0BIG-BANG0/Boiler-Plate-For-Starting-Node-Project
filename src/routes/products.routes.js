@@ -3,6 +3,7 @@ import ProductController from "../controller/products.controller.js";
 import validateRequest from "../middlewares/validation.middleware.js";
 import { uploadFile } from "../middlewares/file-upload.middleware.js";
 import { auth } from "../middlewares/auth.middleware.js";
+import { lastVisit } from "../middlewares/lastVisit.middleware.js";
 
 //initialize express Router
 const productRouter = express.Router();
@@ -11,7 +12,7 @@ const productRouter = express.Router();
 
 const productController = new ProductController();
 
-productRouter.get("/",auth, productController.getProducts);
+productRouter.get("/",auth,lastVisit ,productController.getProducts);
 productRouter.get("/new",auth, productController.getAddForm);
 productRouter.post(
   "/",auth,

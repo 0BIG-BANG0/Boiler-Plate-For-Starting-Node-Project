@@ -170,3 +170,25 @@ Semantics of GET: The GET method in HTTP is specifically designed for retrieving
 Safety and idempotence: GET requests are considered safe and idempotent, meaning they should not have any side effects on the server and should produce the same result every time they are executed. This makes them suitable for use in scenarios where users are simply navigating to a different page or fetching resources.
 Limited functionality of HTML: HTML is primarily a markup language for structuring content, not for defining complex interactions or behaviors. By defaulting to GET requests for anchor tags, HTML keeps things simple and predictable.
 While it's possible to use other HTTP methods like POST with anchor tags via JavaScript or other means, doing so would go against the standard behavior and could lead to unexpected results or non-standard behavior in browsers.
+
+
+
+# Cookies 
+maxAge:
+maxAge is an option used when setting cookies. It specifies the maximum age of the cookie in milliseconds before it expires. In the provided code, maxAge: 2 * 24 * 60 * 60 * 1000 sets the cookie's maximum age to 2 days (2 * 24 hours * 60 minutes * 60 seconds * 1000 milliseconds).
+toLocaleString():
+toLocaleString() is a method in JavaScript that converts a date to a string using the locale-specific version of the date format. It takes into account the user's locale settings, such as language and date formatting preferences. In the code, new Date(req.cookies.lastVisit).toLocaleString() converts the date stored in the cookie to a string representation using the locale-specific date format.
+toISOString():
+toISOString() is a method in JavaScript that converts a date to a string in ISO 8601 format. This format represents a date and time in a standardized way that is independent of the user's locale. In the code, new Date().toISOString() generates the current date and time in ISO 8601 format, which is then used to set the value of the cookie representing the last visit time.
+
+# Cookie Parser
+Cookie parser is a middleware used in Express.js applications to parse cookies from the request headers. When a client sends a request to a server, it can include cookies in the request headers. These cookies often contain data that the server needs to identify the client or maintain session state.
+
+The cookie parser middleware in Express.js parses these cookies and makes them available in the req.cookies object, where each cookie is represented as a key-value pair. This makes it easy for developers to access and manipulate cookies within their Express.js routes and middleware.
+
+Here's a brief overview of what the cookie parser middleware does:
+
+Parses Cookie Header: Cookie parser parses the Cookie header from the incoming request.
+Converts to Object: It parses the cookie string into an object where each key represents the name of a cookie and the corresponding value represents its value.
+Makes Available in Request Object: After parsing, the cookie data is made available in the req.cookies object within the Express.js application, allowing developers to access it easily in their route handlers or middleware.
+Using the cookie parser middleware is essential for applications that rely on cookies for authentication, session management, or other purposes. It simplifies the process of working with cookies in Express.js applications by abstracting away the parsing logic and providing a convenient interface for accessing cookie data.
