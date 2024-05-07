@@ -36,6 +36,7 @@ Step4 - We want to confirm before delete so we have to add js file and for that 
 11. Added some Buttons
 
 12. File Upload using Multer
+
     AddNew Product
     step 1 - Install Multer - npm i multer check documentaion - ✅
     2 - Changes in view - ✅
@@ -44,6 +45,43 @@ Step4 - We want to confirm before delete so we have to add js file and for that 
     5. Update COntroller to update urls of images - 1. Add a debugger in the destination to check data in req.body and req.file and a debugger in the controller in addNewProduct's model add here you can see that the debugger will show you req.body and body in body there is no image and image is in file so we have to destructure all in the add function in model
     6. Addded a custon Validator and to ahndle validation for file.
 
-    UpdateProduct
+    UpdateProduct sam esteps as used above
+
+12. Sessions 
+
+13. Registration Page
+    1. Create a user.model.js file  and create a UserModel in it.
+    2. Same in Controller and  create a method which renders register Page
+    3. Create a user route file and in use it from index file also 
+    4. Create a view for register 
+
+14. Login
+    1 - 4 Steps are same 
+    5. On registration we add user and on login we need to verify that user exists or not
+    6. in post Login we check we check the user is valid or not and then also gives the error Message to all those method which render login page and get all the products and then render the products
+
+15. Session 
+    1. install express sessions
+    2. Configure the session option
+    3. when user logs in we want to add user information to the req which is done through sessions. In index what will happen it will attach a session object to req object
+
+16. Securing the Web pages
+    1. Create a auth.middleware.js file and created a middleware which then applied to all the routes except the login and register
+    So we added the auth in in products routes file.
+
+17. Logout and Clearing Session
+    1. When user is logged in they will see the logout button else they will be seeing only login and register - That is done in view using if else condition
+
+    locals - refers to the object or data which are passed from server to the templates 
+
+    Now we have to give the data to all the pages so that page may know we are currently logged in
+    We have implemetned it in products controller, where ever there is render and in the post Login.
+
+    Logout - we have to make a 
+    1. method in controller and 
+    2. destroy the session 
+    3. in if else handle error and redirect to the login
+
+
 
     
